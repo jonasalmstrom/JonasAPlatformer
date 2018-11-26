@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //vi döper komponenten Rigidbody2d till "rb"
+        //hittar en komponent och länkar den till "rb"
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //den horisontella velocityn på rigidbodyn är beroende på moveSpeed, den vertikala är den samma
         rb.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rb.velocity.y);
-        //om man trycker på W och groundcheck.touches värdet är över noll(att den är på marken) så kan man hoppa
+        //om man trycker på W och groundcheck.touches värdet är över noll(rör mer än noll) så kan man hoppa
         if (Input.GetKeyDown(KeyCode.W) && groundCheck.touches > 0)
         {
             //rigidbodyn får då samma velocity i x led som ovan men den får "jumpHeight" i y led

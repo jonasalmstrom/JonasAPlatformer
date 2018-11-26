@@ -11,7 +11,7 @@ public class HurtObject : MonoBehaviour
         //om det är ett objekt med taggen "Player" colliderar med objektet så körs det som står nedan
         if (collision.gameObject.tag == "Player")
         {
-            //den känner av vilken scen som är nuvarande aktiv och sedan tar namnet på den aktiva scenen och loadar den från början
+            //den känner av vilken scen som är nuvarande aktiv och sedan tar namnet på den aktiva scenen och loadar den från början, samt skapar en temporär variabel kallad "active"
             Scene active = SceneManager.GetActiveScene();
             SceneManager.LoadScene(active.name);
 
