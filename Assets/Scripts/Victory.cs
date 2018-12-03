@@ -16,7 +16,7 @@ public class Victory : MonoBehaviour
             SceneManager.LoadScene("Level1");
         }
     }
-    //en funktion som konstant känner av om någonting colliderar med objektet den sitter påk
+    //en funktion som konstant känner av om någonting colliderar med objektet den sitter på
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //om det är ett objekt med taggen "Player" colliderar med objektet så körs det som står nedan
