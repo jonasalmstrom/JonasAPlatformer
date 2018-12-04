@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - EnemyBorder
   - SmallEnemy
+  - Projectile
   layers:
   - Default
   - TransparentFX

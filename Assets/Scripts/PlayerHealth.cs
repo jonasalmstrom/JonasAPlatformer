@@ -41,6 +41,12 @@ public class PlayerHealth : MonoBehaviour
         {
             DealDamage(50f);
         }
+
+        if (collision.gameObject.tag == "Projectile")
+        {
+            DealDamage(50f);
+            Destroy(collision.gameObject);
+        }
     }
 
     //gör en float vid namn calculatehealth som returnerar värdet av currentHealth / health
