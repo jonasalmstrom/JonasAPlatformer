@@ -5,6 +5,7 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     public int score = 1;
+    public GameObject Effect;
     //en funktion som konstant känner av om någonting colliderar med objektet den sitter på
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,6 +21,7 @@ public class Coin : MonoBehaviour
                 ScoreTracker tracker = controller.GetComponent<ScoreTracker>();
                 //gör sönder coinen
                 Destroy(gameObject);
+                Instantiate(Effect, transform.position, Quaternion.identity);
                 //om tracker inte är lika med null
                 if (tracker != null)
                 {

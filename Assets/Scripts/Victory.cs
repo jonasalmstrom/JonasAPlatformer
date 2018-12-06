@@ -23,7 +23,7 @@ public class Victory : MonoBehaviour
         if (collision.tag == "Player")
         {
             //den printar ett medelande för att man ska kunna se att det funkar samt att den loadar scenen som stringen "levelToLoad" är satt till i inspectorn
-            print("WOOOOOOOWEEEE");
+            //print("WOOOOOOOWEEEE");
             SceneManager.LoadScene(levelToLoad);
 
         }

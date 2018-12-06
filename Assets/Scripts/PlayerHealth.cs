@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
 
     public float currentHealth;
 
-
+    CameraShake cS;
 
 
     private void Start()
@@ -22,9 +22,13 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = health;
         //sätter valuet på healthbaren till calculatehealth
         healthbar.value = CalculateHealth();
+
+        cS = FindObjectOfType<CameraShake>();
     }
 
+    
     //gör en funktion där man kan sätta in en float inom parantesen beroende på situationen
+    //jag har valt att göra en funktion just här för att det ska bli så enkelt som möjligt när man lägger in det i t.ex oncollisionenter2d. Också för att man enkelt ska kunna byta värde på damagedealt.
     void DealDamage(float damageValue)
     {
         currentHealth -= damageValue;
@@ -40,6 +44,7 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.tag == "SmallEnemy")
         {
             DealDamage(50f);
+            cS.Shake(1f, 0.5f);
         }
 
         if (collision.gameObject.tag == "Projectile")
