@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
 
     public float currentHealth;
 
-    CameraShake cS;
+    //CameraShake cS;
 
 
     private void Start()
@@ -23,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
         //sätter valuet på healthbaren till calculatehealth
         healthbar.value = CalculateHealth();
 
-        cS = FindObjectOfType<CameraShake>();
+        //cS = FindObjectOfType<CameraShake>();
     }
 
     
@@ -44,9 +44,9 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.tag == "SmallEnemy")
         {
             DealDamage(50f);
-            cS.Shake(1f, 0.5f);
+            //cS.Shake(1f, 0.5f);
         }
-
+        //om objektet kolliderar med något som har taggen Projectile så kör den funktionen DealDamage med 50 som värde
         if (collision.gameObject.tag == "Projectile")
         {
             DealDamage(50f);
@@ -57,6 +57,7 @@ public class PlayerHealth : MonoBehaviour
     //gör en float vid namn calculatehealth som returnerar värdet av currentHealth / health
     float CalculateHealth()
     {
+        //jag gör detta för att healthbaren behöver ett värde i procent som den kan visa och när man tar t.ex currenthealth = 50 och health = 100, så är det 50/100 vilket ger 0.5(50%)
         return currentHealth / health;
     }
 

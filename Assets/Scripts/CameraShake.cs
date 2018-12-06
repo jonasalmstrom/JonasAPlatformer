@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
-
+    //detta scriptet använder jag inte
     public Camera mainCamera;
 
     private float shakeAmt = 0;
